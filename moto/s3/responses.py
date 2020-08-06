@@ -915,7 +915,7 @@ class ResponseObject(_TemplateEnvironmentMixin, ActionAuthenticatorMixin):
         response_headers = {}
         length = len(response_content)
         last = length - 1
-        _, rspec = request.headers.get("range").split("=")
+        rspec = request.headers.get("range")
         if "," in rspec:
             raise NotImplementedError("Multiple range specifiers not supported")
 
